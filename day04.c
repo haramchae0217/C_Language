@@ -103,6 +103,7 @@ ex) int a;
 ex) char *pc;
     int *pi;
     double *pd;
+    
 간접 참조 연산자 : 포인터에 사용하며, 포인터가 가리키는 변수를 사용한다.
 ex) *pi = 10;
 
