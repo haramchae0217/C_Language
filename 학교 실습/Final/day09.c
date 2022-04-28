@@ -89,30 +89,30 @@ int main(){
     1+2+3+4+5+...+N
     0을 입력할 때까지 무한 반복
     */
-   while(!0){
-        int n=0;
-        int total=0;
-        printf("Input N (0 for stop) : ");
-        scanf("%d",&n);
-        if (n==0){
-            printf("0 입력으로 프로그램 종료");
-            rewind(stdin);
-            continue;
-        }
-        if (n<0){
-            printf("음수 입력으로 프로그램 종료");
-            continue;;
-        }
-        if (n==0 || n==EOF){ // 문자 입력 다시 확인
-            printf("잘못된 입력");
-            break;
-        } 
+//    while(!0){
+//         int n=0;
+//         int total=0;
+//         printf("Input N (0 for stop) : ");
+//         scanf("%d",&n);
+//         if (n==0){
+//             printf("0 입력으로 프로그램 종료");
+//             rewind(stdin);
+//             continue;
+//         }
+//         if (n<0){
+//             printf("음수 입력으로 프로그램 종료");
+//             continue;;
+//         }
+//         if (n==0 || n==EOF){ // 문자 입력 다시 확인
+//             printf("잘못된 입력");
+//             break;
+//         } 
         
-        for(int i=1; i<n+1; i++){
-            total += i;
-        }
-        printf("%d까지의 합계 : %d\n",n,total);
-   }
+//         for(int i=1; i<n+1; i++){
+//             total += i;
+//         }
+//         printf("%d까지의 합계 : %d\n",n,total);
+//    }
 
     /*
     5. 예외처리 작업
@@ -165,12 +165,14 @@ int main(){
        //오름차순
        //10 5 A
        if(first>second){
+           printf("%d부터 %d까지 오름차순정렬 할게요.\n",second,first);
            for(int i=second; i<=first; i++){
                printf("%d ",i);
            }
        }
        // 5 10 A
        else if(first < second){
+           printf("%d부터 %d까지 오름차순정렬 할게요.\n",first,second);
            for(int i = first; i<=second; i++){
                printf("%d ",i);
            }
@@ -181,14 +183,16 @@ int main(){
    }
    else if (third == 68 || third == 100){
        // 내림차순
-       //10 5 D
+       // 10 5 D
        if(first>second){
+           printf("%d부터 %d까지 내림차순정렬 할게요.\n",first,second);
            for(int i = first; i>=second; i--){
                printf("%d ",i);
            }
        }
-       //10 5 D
+       // 5 10 D
        else if(first<second){
+           printf("%d부터 %d까지 내림차순정렬 할게요.\n",second,first);
            for(int i = second; i>=first; i--){
                printf("%d ",i);
            }
@@ -198,7 +202,7 @@ int main(){
        }
    }
    else{
-       printf("올바르지 않은 정렬방식 입력");
+       printf("올바르지 않은 입력방식!!!");
    }
 
 
