@@ -94,26 +94,47 @@ int main() {
 
     // 로또 번호 생성 및 내 당첨번호 확인
     // 로또 번호 종류 / 개수 : 1~46 / 6개
-    // srand(time(NULL));
-    // int lotto[6];
-    // int answer[6];
-    // int ans;
-    // do {
-    //     for (int i = 1; i <= 6; i++) {
-    //     lotto[i-1] = (rand() % 45) + 1;
-    //     }
-    //     printf("Input your 6 lotto numbers (1 ~ 45) : ");
-    //     for(int i = 1; i<=6; i++){
-    //         scanf("%d",&answer[i-1]);
-    //     }
-    //     printf("Lotto Numbers %d %d %d %d %d %d\n",lotto[0],lotto[1],lotto[2],lotto[3],lotto[4],lotto[5]);
+    srand(time(NULL));
 
+    int lotto[6];
+    int answer[6];
+    int matchNum[6];
+    int matchCnt = 0;
+    int ans;
 
+    do {
+        for (int i = 1; i <= 6; i++) {
+            lotto[i-1] = (rand() % 45) + 1;
+        }
 
-    //     getchar();
-    //     printf("계속 하시겠습니까? : (1: 계속, 0: 종료)");
-    //     scanf("%d",&ans);
-    // } while (ans);
+        printf("Input your 6 lotto numbers (1 ~ 45) : ");
+
+        for(int i = 1; i<=6; i++){
+            scanf("%d",&answer[i-1]);
+        }
+        
+        printf("Lotto Numbers %d %d %d %d %d %d\n",lotto[0],lotto[1],lotto[2],lotto[3],lotto[4],lotto[5]);
+
+        for(int i = 0; i <= 5; i++) {
+            for(int j = 0; j <= 5; j++) {
+                if(answer[i] == lotto[j]){
+                    matchNum[matchCnt] = lotto[j];
+                    matchCnt++;
+                }
+            }
+        }
+        
+        printf("Matched num(s): ");
+
+        for (int i = 0; i < matchCnt; i++){
+            printf("%d ",matchNum[i]);
+        }
+
+        printf("- %d nums(s)\n",matchCnt);
+        printf("계속 하시겠습니까? : (1: 계속, 0: 종료)");
+        scanf("%d",&ans);
+
+    } while (ans);
     
 
 
