@@ -103,20 +103,44 @@ int main() {
     int ans;
 
     do {
-        for (int i = 1; i <= 6; i++) {
-            lotto[i-1] = (rand() % 45) + 1;
+        ONE:
+        for (int i = 0; i < 6; i++) {
+            lotto[i] = (rand() % 45) + 1;
+            for(int j = 0; j < i; j++){
+                if (lotto[i] == lotto[j]){
+                    lotto[i] = (rand() % 45) + 1;
+                }
+            }
         }
 
         printf("Input your 6 lotto numbers (1 ~ 45) : ");
 
-        for(int i = 1; i<=6; i++){
-            scanf("%d",&answer[i-1]);
+        for(int i = 0; i<6; i++){
+            scanf("%d",&answer[i]);
+        }
+        int x = sizeof(answer)/sizeof(int);
+        printf("%d",x);
+        if (sizeof(answer)/sizeof(int) != 6){
+            printf("6자리만 입력해주세요!!");
+            goto ONE;
+        }
+
+        for(int i = 0; i < 6; i++) {
+            for(int j = 0; j < i; j++) {
+                if(answer[i] == answer[j]){
+                    printf("같은 수를 입력할 수 없습니다.\n");
+                    goto ONE;
+                }
+            }
         }
         
-        printf("Lotto Numbers %d %d %d %d %d %d\n",lotto[0],lotto[1],lotto[2],lotto[3],lotto[4],lotto[5]);
+        printf("Lotto Numbers :");
+        for(int i = 0; i < 6; i++){
+            printf(" %d",lotto[i]);
+        }
 
-        for(int i = 0; i <= 5; i++) {
-            for(int j = 0; j <= 5; j++) {
+        for(int i = 0; i < 6; i++) {
+            for(int j = 0; j < 6; j++) {
                 if(answer[i] == lotto[j]){
                     matchNum[matchCnt] = lotto[j];
                     matchCnt++;
@@ -124,14 +148,14 @@ int main() {
             }
         }
         
-        printf("Matched num(s): ");
+        printf("\nMatched num(s): ");
 
         for (int i = 0; i < matchCnt; i++){
             printf("%d ",matchNum[i]);
         }
 
         printf("- %d nums(s)\n",matchCnt);
-        printf("계속 하시겠습니까? : (1: 계속, 0: 종료)");
+        printf("계속 하시겠습니까? : (1: 계속, 0: 종료) : ");
         scanf("%d",&ans);
 
     } while (ans);
