@@ -62,12 +62,25 @@ int main() {
 
     // 2-2. 재귀함수로 구현
     // 팩토리얼 결과만 출력
-    // 팩토리얼 항을 함께 출력
 
+    // int n;
+    // printf("Input N : ");
+    // scanf("%d",&n);
+    
+    // printf("%d! = %d",n,factorial(n));
+
+    // 2-3. 재귀함수로 구현
+    // 팩토리얼 항을 함께 출력
     int n;
     printf("Input N : ");
     scanf("%d",&n);
+    
+    printf("%d! : ",n);
 
-    printf("%d! = %d",n,factorial(n));
+    for(int i=1; i<=n; i++){
+        printf("%d * ",i);
+    }
+    
+    printf("\b\b= %d\n",factorial(n));
 
 }
