@@ -1,9 +1,17 @@
 #include<stdio.h>
 #include<math.h>
 
+int factorial(int n) {
+    if(n==1){
+        return 1;
+    } else {
+        return n * factorial(n-1);
+    }
+}
+
 int main() {
     
-    // 이차방정식의 해 구하기
+    // 실습1. 이차방정식의 해 구하기
     // ax^2 + bx + c = 0
     // a, b, c는 입력받기
     // 판별식이 0 또는 양수인 각 경우만 처리한다.
@@ -39,21 +47,27 @@ int main() {
     //     printf("그래도 계산해드릴게요. x = %.2f",result);
     // }
 
-    // N!
-    // 1. 반복문으로 구현
-    //  팩토리얼 결과만 출력
-    // 2. 재귀함수로 구현
-    //  팩토리얼 결과만 출력
-    //  팩토리얼 항을 함께 출력
-    int n=0;
-    int sum=1;
+    // 실습2. N!
+    // 2-1. 반복문으로 구현
+    // 팩토리얼 결과만 출력
+    // int n=0;
+    // int sum=1;
+    // printf("Input N : ");
+    // scanf("%d",&n);
+    // int arr[n];
+    // for(int i = 1; i<=n; i++){
+    //     sum*=i;
+    // }
+    // printf("%d! = %d",n,sum);
+
+    // 2-2. 재귀함수로 구현
+    // 팩토리얼 결과만 출력
+    // 팩토리얼 항을 함께 출력
+
+    int n;
     printf("Input N : ");
     scanf("%d",&n);
-    int arr[n];
-    for(int i = 1; i<=n; i++){
-        sum*=i;
-    }
-   
-   printf("%d! = %d",n,sum);
+
+    printf("%d! = %d",n,factorial(n));
 
 }
