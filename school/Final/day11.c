@@ -45,7 +45,15 @@ int main() {
     // 2. 재귀함수로 구현
     //  팩토리얼 결과만 출력
     //  팩토리얼 항을 함께 출력
-
-
+    int n=0;
+    int sum=1;
+    printf("Input N : ");
+    scanf("%d",&n);
+    int arr[n];
+    for(int i = 1; i<=n; i++){
+        sum*=i;
+    }
+   
+   printf("%d! = %d",n,sum);
 
 }

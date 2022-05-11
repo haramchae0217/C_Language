@@ -118,12 +118,6 @@ int main() {
         for(int i = 0; i<6; i++){
             scanf("%d",&answer[i]);
         }
-        int x = sizeof(answer)/sizeof(int);
-        printf("%d",x);
-        if (sizeof(answer)/sizeof(int) != 6){
-            printf("6자리만 입력해주세요!!");
-            goto ONE;
-        }
 
         for(int i = 0; i < 6; i++) {
             for(int j = 0; j < i; j++) {
