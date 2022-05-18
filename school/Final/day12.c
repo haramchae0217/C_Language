@@ -16,6 +16,16 @@ int fibonacci(int n) {
     }
 }
 
+int IsPrimeNumber(int n) {
+    int count = 0;
+    for(int i = 1; i<=n; i++){
+        if(n%i==0) {
+            count++;
+        }
+    }
+    return count;
+}
+
 int main() {
 
     // 실습 1.
@@ -104,21 +114,53 @@ int main() {
     // 최대공약수 : 공통 약수 중에 최대 수
     // 최소공배수 : 공통 배수 중에 최소 수
 
-    int a, b;
-    int g;
-    int l;
+    // int a, b;
+    // int n;
+    // int g;
 
-    printf("Input two nums : ");
-    scanf("%d %d",&a,&b);
+    // printf("Input two nums : ");
+    // scanf("%d %d",&a,&b);
 
-    for(int i = 1; i<=a && i<=b; ++i){
-        if(a%i==0 && b%i==0){
-            g = i;
+    // n = a > b ? b : a;
+
+    // for(int i = n; i>=2; i--){
+    //     if(a%i==0 && b%i==0){
+    //         g = i;
+    //     }
+    // }
+    // printf("최대 공약수 : %d\n",g);
+    // printf("최소 공배수 : %d",(a*b)/g);
+
+    // 실습 6.
+    // 소수(Prime number)판별
+    // 1과 자기자신 외에 약수가 없는 수 (단, 1은 제외)
+    // 약수의 개수를 보고 소수 여부를 판단하면 된다.
+    // 함수로 구현해보자.
+        // int IsPrimeNumber(int n)
+        // 다음 주제에서 재사용할 것
+    // 1) 1과 자기 자신 포함 => 약수의 개수가 2인 경우 소수
+    // 2) 1과 자기 자신 불포함 => 약수의 개수가 0인 경우 소수
+    // 위 두가지 조건을 모두 구현하자.
+    // 그리고 어느 방법이 더 효과적인지 구별하라.
+
+    // 6-1) 1과 자기 자신 포함 => 약수의 개수가 2인 경우 구하기
+    int n;
+    int count = 0;
+
+    while(1) {
+        printf("Input your number (n>1) : ");
+        scanf("%d",&n);
+
+        if(n<2) {
+         printf("Wrong Input!\n");
+        } else {
+            if (IsPrimeNumber(n)==2) {
+                 printf("A Prime Number!\n");
+            } else {
+                printf("Not A Prime Number!\n");
+            }
         }
     }
-    printf("최대 공약수 : %d",g);
-    printf("최소 공배수 : %d",(a*b)/g);
-
 }
 
 
