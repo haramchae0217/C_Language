@@ -174,22 +174,21 @@ int main() {
     // }
 
     // 6-2) 1과 자기 자신 불포함 => 약수의 개수가 0인 경우 구하기
-    int n;
-    while(1) {
-        printf("Input your number (n>1) : ");
-        scanf("%d",&n);
+    // int n;
+    // while(1) {
+    //     printf("Input your number (n>1) : ");
+    //     scanf("%d",&n);
 
-        if(n<2) {
-            printf("Wrong Input!\n");
-        } else {
-            if(PrimeNumber(n)==0) {
-                printf("A Prime Number!\n");
-            } else {
-                printf("Not A Prime Number!\n");
-            }
-        }
-
-    }
+    //     if(n<2) {
+    //         printf("Wrong Input!\n");
+    //     } else {
+    //         if(PrimeNumber(n)==0) {
+    //             printf("A Prime Number!\n");
+    //         } else {
+    //             printf("Not A Prime Number!\n");
+    //         }
+    //     }
+    // }
 }
 
 
