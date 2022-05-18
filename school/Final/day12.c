@@ -16,9 +16,21 @@ int fibonacci(int n) {
     }
 }
 
+// 1과 자기 자신 포함
 int IsPrimeNumber(int n) {
     int count = 0;
     for(int i = 1; i<=n; i++){
+        if(n%i==0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// 1과 자기 자신 불포함
+int PrimeNumber(int n) {
+    int count = 0;
+    for(int i = 2; i<n; i++){
         if(n%i==0) {
             count++;
         }
@@ -144,22 +156,39 @@ int main() {
     // 그리고 어느 방법이 더 효과적인지 구별하라.
 
     // 6-1) 1과 자기 자신 포함 => 약수의 개수가 2인 경우 구하기
-    int n;
-    int count = 0;
+    // int n;
 
+    // while(1) {
+    //     printf("Input your number (n>1) : ");
+    //     scanf("%d",&n);
+
+    //     if(n<2) {
+    //      printf("Wrong Input!\n");
+    //     } else {
+    //         if (IsPrimeNumber(n)==2) {
+    //              printf("A Prime Number!\n");
+    //         } else {
+    //             printf("Not A Prime Number!\n");
+    //         }
+    //     }
+    // }
+
+    // 6-2) 1과 자기 자신 불포함 => 약수의 개수가 0인 경우 구하기
+    int n;
     while(1) {
         printf("Input your number (n>1) : ");
         scanf("%d",&n);
 
         if(n<2) {
-         printf("Wrong Input!\n");
+            printf("Wrong Input!\n");
         } else {
-            if (IsPrimeNumber(n)==2) {
-                 printf("A Prime Number!\n");
+            if(PrimeNumber(n)==0) {
+                printf("A Prime Number!\n");
             } else {
                 printf("Not A Prime Number!\n");
             }
         }
+
     }
 }
 
