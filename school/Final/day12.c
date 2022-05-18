@@ -66,27 +66,41 @@ int main() {
     // 1,1,2,3,5,8,13,...
     // 반복문으로 구현
 
-    int n;
-    int arr[n];
-    int sum;
+    // int n;
+    // int arr[n];
 
-    printf("Input N (단, N>=3) : ");
+    // printf("Input N (단, N>=3) : ");
+    // scanf("%d",&n);
+
+    // for(int i = 0; i<=n-1; i++){
+    //     if(i<2){
+    //         arr[i] = 1;
+    //         printf("%d, ",arr[i]);
+    //     } else {
+    //         arr[i] = arr[i-1] + arr[i-2];
+    //         printf("%d, ",arr[i]);
+    //     }
+    // }
+    // printf("\b\b = %d",arr[n-1]);
+
+    // 실습 4.
+    // 약수 구하기
+    // N의 약수 : 정수 N을 나누어 떨어지게 하는 정수
+    // 양의 약수만을 가정
+
+    int n;
+
+    printf("Input N : ");
     scanf("%d",&n);
 
-    for(int i = 0; i<=n-1; i++){
-        if(i<2){
-            arr[i] = 1;
-            printf("%d, ",arr[i]);
-        } else {
-            arr[i] = arr[i-1] + arr[i-2];
-            printf("%d, ",arr[i]);
+    for(int i = 1; i<=n; i++){
+        if(n%i==0){
+            printf("%d ",i);
         }
     }
-    printf("\b\b = %d",arr[n-1]);
+
+
 
 }
 
-// n = 3 => 1 + 2 = 3
-// n = 4 => 2 + 3 = 5
-// n = 5 => 3 + 4 = 8
-// n = 6 => 4 + 5 = 13
+
