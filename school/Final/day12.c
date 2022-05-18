@@ -88,18 +88,36 @@ int main() {
     // N의 약수 : 정수 N을 나누어 떨어지게 하는 정수
     // 양의 약수만을 가정
 
-    int n;
+    // int n;
 
-    printf("Input N : ");
-    scanf("%d",&n);
+    // printf("Input N : ");
+    // scanf("%d",&n);
 
-    for(int i = 1; i<=n; i++){
-        if(n%i==0){
-            printf("%d ",i);
+    // for(int i = 1; i<=n; i++){
+    //     if(n%i==0){
+    //         printf("%d ",i);
+    //     }
+    // }
+
+    // 실습 5.
+    // 최대공약수(GCM), 최소공배수(LCM)
+    // 최대공약수 : 공통 약수 중에 최대 수
+    // 최소공배수 : 공통 배수 중에 최소 수
+
+    int a, b;
+    int g;
+    int l;
+
+    printf("Input two nums : ");
+    scanf("%d %d",&a,&b);
+
+    for(int i = 1; i<=a && i<=b; ++i){
+        if(a%i==0 && b%i==0){
+            g = i;
         }
     }
-
-
+    printf("최대 공약수 : %d",g);
+    printf("최소 공배수 : %d",(a*b)/g);
 
 }
 
