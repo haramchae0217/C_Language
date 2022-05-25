@@ -168,19 +168,21 @@ int main() {
         int count = 0;
     
         printf("Input Subject number (>=3) : ");
-        scanf("%d",&num);
+        if (scanf("%d",&num)==EOF)
+            break;
         if(num<3){
-            printf("Wrong number! Input again...");  
+            printf("Wrong number! Input again...\n"); 
+            continue;
+        } else {
+            srand(time(NULL));
+            for(int i=0; i<num; i++){
+                scores[i] = (rand()%99);
+                count++;
+                printf("%d ",scores[i]);
+            }
+            printf("\n");
+            printf("Max : %d, Min : %d, Avg : %.1f\n",maxScore(scores,count),minScore(scores,count),avgScore(scores,count));
         }
-
-        srand(time(NULL));
-        for(int i=0; i<num; i++){
-            scores[i] = (rand()%99);
-            count++;
-            printf("%d ",scores[i]);
-        }
-        printf("\n");
-        printf("Max : %d, Min : %d, Avg : %.1f\n",maxScore(scores,count),minScore(scores,count),avgScore(scores,count));
     }
     return 0;
 }
