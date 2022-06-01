@@ -32,6 +32,7 @@ int printARR(int randArr[], int arrSize) {
     for(int i=0; i < arrSize; i++){
         printf("%d ",randArr[i]);
     }
+    printf("\n");
     return 0;
 }
 
@@ -60,25 +61,70 @@ int main() {
     // -50 ~ 50 사이의 난수 배열 사용 rand()%101-50
     // n은 사용자 입력을 받음 : 음수 가능
     // 두 수의 차이 계산 : 절대값을 이용한 abs이용
-    int n;
-    int randArr[ARR_SIZE];
-    
-    printf("Input N : ");
-    scanf("%d",&n);
+    // while(1){
+    //     int n;
+    //     int randArr[ARR_SIZE];
+        
+    //     printf("Input N : ");
+    //     if (scanf("%d",&n) == EOF)
+    //         break;
 
-    getRandNums(randArr, ARR_SIZE, MAX_RANGE);
+    //     getRandNums(randArr, ARR_SIZE, MAX_RANGE);
 
-    printf("Numbers : ");
-    printARR(randArr, ARR_SIZE);
-    printf("\n");
+    //     printf("Numbers : ");
+    //     printARR(randArr, ARR_SIZE);
 
-    int nearNums[2] = {MAX_RANGE -1, MAX_RANGE -1};
-    int numCnt = getNearestNums(randArr, ARR_SIZE, n, nearNums);
+    //     int nearNums[2] = {MAX_RANGE -1, MAX_RANGE -1};
+    //     int numCnt = getNearestNums(randArr, ARR_SIZE, n, nearNums);
 
-    printf("Nearest num of %d is ",n);
-    for(int i=0; i<numCnt; i++){
-        printf("%d, ", nearNums[i]);
+    //     printf("Nearest num of %d is ",n);
+    //     for(int i=0; i<numCnt; i++){
+    //         printf("%d, ", nearNums[i]);
+    //     }
+    //     printf("\b\b \n");
+    //     printf("------------------");
+    // }
+
+    // 실습 2.
+    // 보수구하기
+    // 2-1.
+    // 8비트 숫자에 대해 1의 보수 및 2의 보수 구하기
+    // 1의 보수 구한 후 + LSB + 1
+    // 숫자는 scnaf함수를 통해 입력받을 것
+    // 숫자는 난수를 통해 입력받을 것
+    // 이진수 생성 0 or 1
+
+    int a[8];
+    int b1[8];
+    int b2[8];
+    int i, c=1;
+
+    printf("Input (8bit 2진수) : ");
+    for(int i=0; i<8; i++){
+        scanf("%d",&a[i]);
+        b1[i] = 1 - a[i];
     }
-    printf("\b\b \n");
 
+    i--;
+
+    do{
+        b2[i] = b1[i] + c;
+        b2[i] = b2[i] % 2;
+        c = b1[i] * c;
+        i--;
+    } while(i >= 0);
+
+    i++;
+
+    printf("Output : \n");
+    printf("1의 보수 : ");
+    for(int i=0; i<8; i++){
+        printf("%d ",b1[i]);
+    }
+    printf("2의 보수 : ");
+    for(int i=0; i<8; i++){
+        printf("%d ",b2[i]);
+    }
+
+    return 0;
 }
