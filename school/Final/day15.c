@@ -117,21 +117,57 @@ int main() {
     // 실습 3.
     // 10진수(양의 정수)를 8진수로 변환
     // 크기 10인 배열을 사용할 것
-    // 작은 첨자에서부터 저장할 것
+    // 낮은 첨자 위치에서부터 저장할 것
+
+    // while (1){
+
+    //     int num;
+    //     int mok;
+    //     int nmg;
+    //     int cnt = -1;
+    //     int complement[11] = {0,};
+
+    //     printf("Input N : ");
+    //     scanf("%d",&num);
+         
+    //     if(num > 1073741824-1){
+    //         printf("Wrong Number. 0 ~ 1073741824\n");
+    //         continue;
+    //     }
+
+    //     mok = num;
+
+    //     do{
+    //         cnt++;
+    //         mok = num / 8;
+    //         nmg = num - mok * 8;
+    //         complement[cnt] = nmg;
+    //         num = mok;
+    //     }while (mok!=0);
+    //     complement[cnt+1] = 0;
+
+    //     for(int i=cnt+1; i>=0; i--){
+    //         printf("%d ",complement[i]);
+    //     }
+    //     printf("\n");
+    // }
+
+    // 실습 4.
+    // 10진수(양의 정수)를 16진수로 변환
+    // 크기 10인 배열을 사용할 것
+    // 낮은 첨자 위치에서부터 저장할 것
 
     while (1){
 
-        int num;
-        int mok;
-        int nmg;
+        long long num, mok, nmg;
         int cnt = -1;
-        int complement[11] = {0,};
+        int complement[10] = {0,};
 
         printf("Input N : ");
-        scanf("%d",&num);
+        scanf("%lld", &num);
          
-        if(num > 1073741824-1){
-            printf("Wrong Number. 0 ~ 1024\n");
+        if(num > 1.0995116e+12-1){
+            printf("Wrong Number. 0 ~ 1.0995116e+12\n");
             continue;
         }
 
@@ -139,15 +175,19 @@ int main() {
 
         do{
             cnt++;
-            mok = num / 8;
-            nmg = num - mok * 8;
+            mok = num / 16;
+            nmg = num - mok * 16;
+    
             complement[cnt] = nmg;
             num = mok;
         }while (mok!=0);
-        complement[cnt+1] = 0;
 
-        for(int i=cnt+1; i>=0; i--){
-            printf("%d ",complement[i]);
+        for(int i=cnt, k; i>=0; i--){
+            k = complement[i];
+            if(k >= 10 && k<= 15)
+                printf("%c", k+55);
+            else
+                printf("%d ", k);
         }
         printf("\n");
     }
