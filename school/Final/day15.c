@@ -125,7 +125,7 @@ int main() {
         int mok;
         int nmg;
         int cnt = -1;
-        int complement[10] = {0,};
+        int complement[11] = {0,};
 
         printf("Input N : ");
         scanf("%d",&num);
