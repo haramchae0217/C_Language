@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 int main() {
 
@@ -199,6 +200,35 @@ int main() {
     // 5-1.
     // MSB -> LSB 방향으로 한 비트씩 LSB위치로 Shift한 후, 정수 1과 비트 AND 후 출력
 
+    // while(1){
+    //     unsigned int num;
+    //     int cnt=0;
+
+    //     printf("Input Number (+,-): ");
+    //     scanf("%u",&num);
+    //     if (num==0)
+    //         break;
+
+    //     for(int i=31; i>=0; i--){
+    //         if(cnt%4==0 && cnt!=0 ){
+    //             printf("  ");
+    //         }
+    //         printf("%d",num >> i & 1);
+    //         cnt++;
+    //     }
+    //     printf("\n");
+    // }
+
+    // 5-2.
+    // 각 비트를 자리 수로 비트 &
+    // 각 자리수의 해당 자리 수만 1이고 나머지 비트는 모두 0
+    // pow함수 이용
+        // 예 2^31 = pow(2,31)
+        // pow 함수 반환값 확인
+    // #include<math.h> 사용
+
+    // num & 32 / 32 = 1
+
     while(1){
         unsigned int num;
         int cnt=0;
@@ -208,14 +238,15 @@ int main() {
         if (num==0)
             break;
 
-        for(int i=31; i>=0; i--){
+        for(int i=31, k; i>=0; i--){
             if(cnt%4==0 && cnt!=0 ){
                 printf("  ");
             }
-            printf("%d",num >> i & 1);
+            (num & (int)pow(2,i)) ? printf("1") : printf("0");
             cnt++;
         }
         printf("\n");
     }
+
 
 }
