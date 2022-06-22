@@ -229,24 +229,23 @@ int main() {
 
     // num & 32 / 32 = 1
 
-    while(1){
-        unsigned int num;
-        int cnt=0;
+    // while(1){
+    //     unsigned int num;
+    //     int cnt=0;
 
-        printf("Input Number (+,-): ");
-        scanf("%u",&num);
-        if (num==0)
-            break;
+    //     printf("Input Number (+,-): ");
+    //     scanf("%u",&num);
+    //     if (num==0)
+    //         break;
 
-        for(int i=31, k; i>=0; i--){
-            if(cnt%4==0 && cnt!=0 ){
-                printf("  ");
-            }
-            (num & (int)pow(2,i)) ? printf("1") : printf("0");
-            cnt++;
-        }
-        printf("\n");
-    }
-
+    //     for(int i=31, k; i>=0; i--){
+    //         if(cnt%4==0 && cnt!=0 ){
+    //             printf("  ");
+    //         }
+    //         (num & (int)pow(2,i)) ? printf("1") : printf("0");
+    //         cnt++;
+    //     }
+    //     printf("\n");
+    // }
 
 }
