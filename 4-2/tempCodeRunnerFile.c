@@ -1,16 +1,12 @@
-ouble score;
+int n;
+    int sum;
 
-    // printf("Input score : ");
-    // scanf("%lf", &score);
+    printf("Input N (단, N >= 3) : ");
+    scanf("%d",&n);
 
-    // if (score >= 90) {
-    //     printf("A학점");
-    // } else if (score >= 80) {
-    //     printf("B학점");
-    // } else if (score >= 70) {
-    //     printf("C학점");
-    // } else if (score >= 60) {
-    //     printf("D학점");
-    // } else {
-    //     printf("F학점");
-    // }
+    for(int i=1; i<=n; i++){
+        printf("%d, ",fibonacci(i));
+    }
+    sum = fibonacci(n);
+
+    printf("\b\b = 
