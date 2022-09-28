@@ -21,16 +21,20 @@ int fibonacci(int n) {
 int main() {
 
     // 팩토리얼 함수
-    int fac;
-    printf("Input factorial : ");
-    scanf("%d", &fac);
-    printf("%d! = %d\n", fac, factorial(fac));
+    while(1) {
+        int fac;
+        printf("Input factorial : ");
+        if (scanf("%d", &fac) == EOF) {
+            break;
+        }
+        printf("%d! = %d\n", fac, factorial(fac));
+    }
 
     // 피보나치 함수
-    int fib;
-    printf("Input fibonacci");
-    scanf("%d", &fib);
-    printf("fibonacci of %d = %d\n", fib, fibonacci(fib));
+    // int fib;
+    // printf("Input fibonacci");
+    // scanf("%d", &fib);
+    // printf("fibonacci of %d = %d\n", fib, fibonacci(fib));
 
     return 0;
 }
