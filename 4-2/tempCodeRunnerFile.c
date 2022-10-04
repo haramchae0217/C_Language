@@ -1,12 +1,11 @@
-int n;
-    int sum;
+int lotto[6] = {0,};
 
-    printf("Input N (단, N >= 3) : ");
-    scanf("%d",&n);
+    // srand( time(NULL));
 
-    for(int i=1; i<=n; i++){
-        printf("%d, ",fibonacci(i));
-    }
-    sum = fibonacci(n);
+    // for(int i = 0; i < (sizeof(lotto) / 4); i++) {
+    //     lotto[i] = rand() % 45 + 1;
+    // }
 
-    printf("\b\b = 
+    // for(int i = 0; i < (sizeof(lotto) / 4); i++) {
+    //     printf("%d\t", lotto[i]);
+    // }
