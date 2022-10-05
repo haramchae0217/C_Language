@@ -4,6 +4,8 @@
 #include <time.h>
 #pragma warning(disable: 6031)
 
+void swap(int *a, int *b);
+
 int main() {
 
     // 포인터 예제 1
@@ -52,13 +54,31 @@ int main() {
 
     // 포인터 예제 4
 
-    int a = 10;
-    int *p = &a;
-    double *pd;
+    // int a = 10;
+    // int *p = &a;
+    // double *pd;
 
-    pd = p;
+    // pd = p; // 정수와 실수는 표현 방식이 완전히 다름
 
-    printf("%lf\n", *pd);
+    // printf("%lf\n", *pd);
+
+    // 포인터 예제 5
+
+    int a = 10, b = 20;
+
+    printf("before swap :  a = %d, b = %d\n", a, b);
+    swap(&a,&b);
+    printf("after swap :  a = %d, b = %d\n", a, b);
+
+
 
     return 0;
+}
+
+void swap(int *a, int *b) {
+    int temp;
+
+    temp = *a;
+    *a = *b;
+    *b = temp;
 }
