@@ -70,8 +70,6 @@ int main() {
     swap(&a,&b);
     printf("after swap :  a = %d, b = %d\n", a, b);
 
-
-
     return 0;
 }
 
