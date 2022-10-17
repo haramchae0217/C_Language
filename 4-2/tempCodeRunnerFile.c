@@ -1,11 +1,13 @@
-[30] = "ABCDEFG";
-    char str[30] = "abcd";
-    char * ps1 = "12";
 
-    strcpy(myString,"M");
-    strcpy(myString,ps1);
-    strcpy(myString,str);
-    int length = strlen(myString);
-    for(int i = 0; i < 7; i++){
-        printf("%c",myString[i]);
-    }
+    // double c = 1.0;
+    // int *pa, *pb;
+    // double *pc = &c;
+    // pa = &a;
+    // pb = &b;
+    // *pa = *pa + *pb;
+    // *pb = *pa + *pb;
+    // *pc = *pc / 2.0;
+    // double result = (a+b+c) / sizeof(pc);
+    // // a = 2, b = 3, c = 0.5
+    // // sizeof(pc) = 8
+    // printf("%.6f",result);
