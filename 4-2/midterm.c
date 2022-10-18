@@ -83,7 +83,7 @@ int main() {
     // *pc = *pc / 2.0;
     // double result = (a+b+c) / sizeof(pc);
     // // a = 2, b = 3, c = 0.5
-    // // sizeof(pc) = 8
+    // // sizeof(pc) = 8 (64bit use)
     // printf("%.6f",result);
 
     // ex8)
