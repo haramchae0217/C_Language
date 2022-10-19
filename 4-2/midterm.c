@@ -4,131 +4,208 @@
 #include <stdlib.h>
 #include <time.h>
 #pragma warning(disable: 6031)
-#define COUNT 6
-#define PIVOT 12
 
-// ex1)
-int sum(int, int);
-
-// ex2)
-int myFunc(char);
+#define SOMETHING 6
 
 // ex3)
-void myFunc2(int i, int j) {
-    if(i==0) {
-        return ;
-    }
-    i--;
-    myFunc2(i,i+j);
-    printf("%d",j);
+void Swap1(int x, int y) {
+    int temp = x;
+    x = y;
+    y = temp;
+} 
+
+void Swap2(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
-// ex7)
-void swap(int *pa, int *pb) {   //a
-    // int *temp;                  //b
-    // temp = *pa;                 //c o
-    // *pa = *pb;                  //d
-    // *pb = *temp;                //e
+// ex15)
+int sumary(int *ary,int SIZE) {
+    int sum = 0;
+    for(int i = 0; i < SIZE; i++){
+        sum += ary[i];
+    }
+    return sum;
 }
 
 int main() {
 
-    // ex1)
-    // int a = 10, b = 20;
-    // int result;
-    // printf("%d",sum(a,b)/2);
+    // ex1) -> 136.8
+    double celsius = 26.0, fahrenheit1 = 0.0, fahrenheit2 = 0.0;
 
-    // ex2)
-    // int sum = 0;
-    // for(int i = 0; i <3; i++){
-    //     sum += myFunc('A'+i);
-    //     // 65 + 66 + 67 = 198
-    // }
-    // printf("%d",sum);
+    fahrenheit1 = 9/5 * celsius + 32;
+    fahrenheit2 = (double)9/5 * celsius + 32;
 
-    // ex3)
-    // myFunc2(3,0);
+    printf("%.1f",fahrenheit1+fahrenheit2);
+    
+    // ex2) -> 11
+    int a = 2;
+    while(a<10) {
+        a *= 2;
+        a++;
+    }
+    printf("%d",a);
 
-    // ex4)
-    // int score[COUNT] = {1,2,3,4,};
-    // int a=1, b=1, c=1;
-    // for(int i = 0; i < COUNT; i++){
-    //     a += score[i];
-    //     // 1+1+2+3+4+0+0 = 11
-    // }
-    // for(int i = 0; i < COUNT; i++){
-    //     b *= score[i];
-    //     // 1*1*2*3*4*0*0 = 0
-    // }
-    // for(int i = 0; i < COUNT; i++){
-    //     c -= score[i];
-    //     // 1-1-2-3-4-0-0 = -9
-    // }
-    // printf("%d",a+b+c);
+    // ex3) -> 10202010
+    int a = 10, b = 20;
+    Swap1(a, b);
+    printf("%d%d",a,b);
+    Swap2(a,b);
+    printf("%d%d",a,b);
 
-    //ex5)
-    // char arr[] = "my name is HELLO";
-    // arr[PIVOT] = '\0';
-    // printf("%s",arr);
+    // ex4) -> KU
+    char arr[] = "KONKUK";
+    char one, two;
+    one = two = arr[0];
 
-    // ex6)
-    // int a = 1, b = 1;
-    // double c = 1.0;
-    // int *pa, *pb;
-    // double *pc = &c;
-    // pa = &a;
-    // pb = &b;
-    // *pa = *pa + *pb;
-    // *pb = *pa + *pb;
-    // *pc = *pc / 2.0;
-    // double result = (a+b+c) / sizeof(pc);
-    // // a = 2, b = 3, c = 0.5
-    // // sizeof(pc) = 8 (64bit use)
-    // printf("%.6f",result);
+    for(int i = 1; strlen(arr); i++) {
+        if(arr[i] < one) {
+            one = arr[i];
+        }
+        if(arr[i] > two) {
+            two = arr[i];
+        }
+    }
+    printf("%c%c",one, two);
 
-    // ex8)
-    // int arr[5] = {1,2,3,};  //a
-    // int *p = arr;           //b
-    // const int *q = arr;     //c
-    // int *r = NULL;
-    // p[4]++;                 //d
-    // q[4]++;                 //e o
-    // p++;                    //f
-    // q++;                    //g
-    // arr++;                  //h o
-    // arr=r;                  //i o
+    // ex5) -> 21
+    int num = 7, sum = 0;
+    while(num-- > 0) {
+        sum += num;
+    }
+    printf("%d",sum);
 
-    // ex9)
-    // char name[20];
-    // name[0] = 'L';
-    // name = "kim chul su";
-    // char * pName = name;
-    // pName[0] = '\0';
-    // pName = "Song chul su";
+    // ex6) -> klmnopqr
+    switch(SOMETHING) {
+        case 1: 
+            printf("a"); printf("b");
+            break;
+        case 2: 
+            printf("a"); printf("b");
+        case 3: 
+            printf("a"); printf("b");
+        case 4: 
+            printf("a"); printf("b");
+        case 5: 
+            printf("a"); printf("b");
+            break;
+        case 6: 
+            printf("a"); printf("b");
+        case 7: 
+            printf("a"); printf("b");
+        case 8: 
+            printf("a"); printf("b");
+        default: 
+            printf("q"); printf("r");
+            break;
+    }
 
-    // ex10)
-    // char myString[30] = "ABCDEFG";
-    // char str[30] = "abcd";
-    // char * ps1 = "12";
+    // ex7) -> 31
+    int a = 7;
+    int z1 = a << 2;
+    int z2 = a >> 1;
+    
+    printf("%d",z1+z2);
 
-    // strcpy(myString,"M");
-    // strcpy(myString,ps1);
-    // strcpy(myString,str);
-    // int length = strlen(myString);
-    // for(int i = 0; i < 7; i++){
-    //     printf("%c",myString[i]);
-    // }
+    // ex8) -> 460
+    double distance = 500000.0, velocity = 100.0;
+    double tot_sec = 0.0;
+
+    int hour = 0, min = 0, sec = 0;
+
+    tot_sec = distance / velocity;
+
+    hour = tot_sec / 3600;
+    min = (tot_sec - hour * 3600) / 60;
+    sec = tot_sec - hour * 3600 - min * 60;
+
+    printf("%d",hour * min * sec);
+
+    // ex9) -> E3
+    int a = 'A', b = 'B', c = 'C', d = 'D';
+    printf("%c%d", a + 4, d - a);
+
+    // ex10) -> 2
+    char name[20] = {0,};
+
+    name[0] = 'l';          // 1
+    name = "Kim chul su";   // 2
+
+    char * pName = name;    // 3
+
+    pName[0] = 'K';         // 4
+    pName = "Song chul su"; // 5
+
+    // ex11) -> -2
+    int a = -1, b = 0;
+    a += (b) ? b : b - 1;
+    printf("%d", a);
+
+    // ex12) -> N
+    int input = 111;
+    (input % 3) ? printf("M") : printf("N");
+
+    // ex13) -> 9
+    const int MAX = 5;
+    int ret = 0;
+    for(int i = 0; i <= MAX; i++) {
+        if(i % 2 == 0) {
+            continue;
+        }
+        ret += i;
+    }
+    printf("%d",ret);
+
+    // ex14) -> 4
+    int month = 7;
+
+    if((month >= 8) || (month >= 6))
+        printf("1");
+    else if ((month >= 5) && (month < 7))
+        printf("2");
+    else if ((month >= 7) && (month < 6))
+        printf("3");
+    else if ((month >= 8) || (month <= 9))
+        printf("4");
+    else 
+        printf("5");
+
+    // ex15) -> 180
+    int point[] = {10,20,30};
+    int *address = point;
+    int aryLength = sizeof(point) / sizeof(int);
+    int result = 0;
+
+    for(int i = 0; i < aryLength; i++) {
+        result += *(point + i);
+    }
+
+    result += sumary(point, aryLength);
+    result += sumary(address, aryLength);
+
+    printf("%d",result);
+
+    // ex16) -> 5
+    int a[] = {8,2,8,1,3};
+    int *p = a;
+    int result = 0;
+
+    result += p[4];
+    result += *(++p);
+
+    printf("%d",result);
+
+    // ex17) -> KU
+    char *p = "KONKUK UNIVERSITY";
+    printf("%c%c", p[5], p[7]);
+
+    // ex18) -> 122436
+    for(int i = 1; i <= 3; i++) {
+        for(int j = 1; j <= 2; j++) {
+            printf("%d", i*j);
+        }
+    }
 
     return 0;
-}
-
-int sum(int a, int b) {
-    int temp;
-    temp = a + b;
-
-    return temp;
-}
-
-int myFunc(char ch) {
-    return ch;
 }
