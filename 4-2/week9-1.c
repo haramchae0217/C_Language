@@ -5,6 +5,8 @@
 #include <time.h>
 #pragma warning(disable: 6031)
 
+void my_gets(char *str, int size);
+
 int main() {
 
     // ex1)
@@ -24,14 +26,31 @@ int main() {
     // printf("%c \n", ch1);
 
     // ex3)
-    int res;
-    char ch;
+    // int res;
+    // char ch;
 
-    while(1) {
-        res = scanf("%c",&ch);
-        if(res == -1) break;
-        printf("%d ", ch);
-    }
+    // while(1) {
+    //     res = scanf("%c",&ch);
+    //     if(res == EOF) break;
+    //     printf("%d ", ch);
+    // }
+
+    // ex4)
+    char str[7];
+
+    my_gets(str,sizeof(str));
+    printf("입력한 문자열 : %s\n", str);
 
     return 0;
+}
+
+void my_gets(char *str, int size) {
+
+    char ch;
+    int i = 0;
+
+    while((ch = getchar()) != EOF && (ch != '\n') && (i < size - 1)) {
+        str[i++] = ch;
+    }
+    str[i] = '\0';
 }
