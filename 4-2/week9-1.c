@@ -16,8 +16,10 @@ int main() {
     printf("대문자 : %c %c",cap,'\n');
     printf("소문자 : %c\n",small);
 
-    char ch = getchar();
-    printf("%c \n", ch);
+    char ch1= getc(stdin);
+    char ch2 = getchar();
+
+    printf("%c \n", ch1);
 
     return 0;
 }
