@@ -93,8 +93,15 @@ int main() {
     // printf("바뀐 문자열 : %s\n", str1);
 
     // ex9)
-    char str[20] = "mango tree";
-    strncpy(str, "apple-pie", 5); // apple-pie에서 5문자만 복사
+    // char str[20] = "mango tree";
+    // strncpy(str, "apple-pie", 5); // apple-pie에서 5문자만 복사
+    // printf("%s\n", str);
+
+    // ex10)
+    char str[80] = "straw";
+    strcat(str, "berry");
+    printf("%s\n", str);
+    strncat(str,"piece", 3);
     printf("%s\n", str);
 
     return 0;
