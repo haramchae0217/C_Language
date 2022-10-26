@@ -22,13 +22,23 @@ int main() {
     // printf("내일 후식은 %s입니다.\n", dessert);
 
     // ex3)
-    char str[80];
+    // char str[80];
 
-    printf("문자열 입력 : ");
-    scanf("%s", str); // 배열은 이름이 곧 주소기 때문에 &연산자가 없어도 됨.
-    printf("첫 번째 단어 : %s\n", str);
-    scanf("%s",str);
-    printf("버퍼에 남아있는 두 번째 단어 : %s\n", str);
+    // printf("문자열 입력 : ");
+    // scanf("%s", str); // 배열은 이름이 곧 주소기 때문에 &연산자가 없어도 됨.
+    // printf("첫 번째 단어 : %s\n", str);
+    // scanf("%s",str);
+    // printf("버퍼에 남아있는 두 번째 단어 : %s\n", str);
+
+    // char name[100];
+    // scanf("%[^\n]s", name);
+
+    // ex4)
+    char str[80];
+    printf("공백이 포함된 문자열 입력 : ");
+    gets(str);
+    printf("입력한 문자열은 %s입니다.",str);
+
 
     return 0;
 }
