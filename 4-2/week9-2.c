@@ -83,6 +83,15 @@ int main() {
     strcpy(str1, str2);
     printf("바뀐 문자열 : %s\n", str1);
 
+    strcpy(str1,ps1);
+    printf("바뀐 문자열 : %s\n", str1);
+
+    strcpy(str1,ps2);
+    printf("바뀐 문자열 : %s\n", str1);
+
+    strcpy(str1, "banana");
+    printf("바뀐 문자열 : %s\n", str1);
+
 
     return 0;
 }
