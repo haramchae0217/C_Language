@@ -49,15 +49,31 @@ int main() {
     // fgets = 배열의 크기가 n이라면 n-2까지 담을 수 있다. 마지막에 개행문자(\n)을 붙이고 뒤에 null문자(\0)를 삽입함.
 
     // ex6)
-    int age;
-    char name[20];
+    // int age;
+    // char name[20];
 
-    printf("나이 입력 : ");
-    scanf("%d", &age);
+    // printf("나이 입력 : ");
+    // scanf("%d", &age);
 
-    printf("이름 입력 : ");
-    gets(name);
-    printf("나이 : %d, 이름 : %s\n", age, name);
+    // printf("이름 입력 : ");
+    // gets(name);
+    // printf("나이 : %d, 이름 : %s\n", age, name);
+
+    // 나이에 17을 입력하고 엔터를 누를때 버퍼에는 17과 \n이 같이 저장
+    // scanf에서는 \n 앞까지만 출력하기에 17만 출력하고 
+    // gets에서 입력 받아야하지만 버퍼에 \n이 남아있어 
+    // \n을 입력 받았다고 생각하고 
+    // 개행문자를 출력하고 프로그램 종료
+
+    // ex7)
+    // char str[80] = "apple juice";
+    // char *ps = "banana";
+
+    // puts(str); // str에 있는 apple juice를 출력하고 줄바꿈
+    // fputs(ps, stdout); // banana만 출력
+    // puts("milk"); // banana에 이어 milk출력
+
+    
 
     return 0;
 }
