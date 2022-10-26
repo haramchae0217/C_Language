@@ -41,12 +41,23 @@ int main() {
 
     // ex5)
     char str[80];
-    printf("공백이 포함된 문자열 입력 : ");
-    fgets(str, sizeof(str), stdin);
-    printf("입력된 문자열은 %s입니다.\n", str);
+    // printf("공백이 포함된 문자열 입력 : ");
+    // fgets(str, sizeof(str), stdin);
+    // printf("입력된 문자열은 %s입니다.\n", str);
 
     // gets = 배열의 크기가 n이라면 n-1까지 담을 수 있다. 마지막에 null문자(\0)를 삽입함.
     // fgets = 배열의 크기가 n이라면 n-2까지 담을 수 있다. 마지막에 개행문자(\n)을 붙이고 뒤에 null문자(\0)를 삽입함.
+
+    // ex6)
+    int age;
+    char name[20];
+
+    printf("나이 입력 : ");
+    scanf("%d", &age);
+
+    printf("이름 입력 : ");
+    gets(name);
+    printf("나이 : %d, 이름 : %s\n", age, name);
 
     return 0;
 }
