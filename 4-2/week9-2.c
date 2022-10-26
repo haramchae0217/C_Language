@@ -34,10 +34,16 @@ int main() {
     // scanf("%[^\n]s", name);
 
     // ex4)
+    // char str[80];
+    // printf("공백이 포함된 문자열 입력 : ");
+    // gets(str);
+    // printf("입력한 문자열은 %s입니다.",str);
+
+    // ex5)
     char str[80];
     printf("공백이 포함된 문자열 입력 : ");
-    gets(str);
-    printf("입력한 문자열은 %s입니다.",str);
+    fgets(str, sizeof(str), stdin);
+    printf("입력된 문자열은 %s입니다.\n", str);
 
 
     return 0;
