@@ -98,11 +98,23 @@ int main() {
     // printf("%s\n", str);
 
     // ex10)
-    char str[80] = "straw";
-    strcat(str, "berry");
-    printf("%s\n", str);
-    strncat(str,"piece", 3);
-    printf("%s\n", str);
+    // char str[80] = "straw";
+    // strcat(str, "berry");
+    // printf("%s\n", str);
+    // strncat(str,"piece", 3);
+    // printf("%s\n", str);
+
+    // ex11)
+    char str1[80], str2[80];
+    char *resp;
+
+    printf("2개의 과일 이름 입력 : ");
+    scanf("%s%s",str1,str2);
+    if(strlen(str1)> strlen(str2))
+        resp = str1;
+    else
+        resp = str2;
+    printf("이름이 긴 과일은 : %s\n", resp);
 
     return 0;
 }
