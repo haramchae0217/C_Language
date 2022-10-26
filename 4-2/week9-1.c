@@ -76,7 +76,6 @@ int main() {
     printf("입력한 문자열 : %s\n", str);
     printf("아스키 코드 값이 가장 큰 문자 : %c", maxCh);
 
-
     return 0;
 }
 
