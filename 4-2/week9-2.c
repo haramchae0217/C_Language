@@ -40,7 +40,7 @@ int main() {
     // printf("입력한 문자열은 %s입니다.",str);
 
     // ex5)
-    char str[80];
+    // char str[80];
     // printf("공백이 포함된 문자열 입력 : ");
     // fgets(str, sizeof(str), stdin);
     // printf("입력된 문자열은 %s입니다.\n", str);
@@ -74,24 +74,28 @@ int main() {
     // puts("milk"); // banana에 이어 milk출력
 
     // ex8)
-    char str1[80] = "strawberry";
-    char str2[80] = "apple";
-    char *ps1 = "banana";
-    char *ps2 = "str2";
+    // char str1[80] = "strawberry";
+    // char str2[80] = "apple";
+    // char *ps1 = "banana";
+    // char *ps2 = "str2";
 
-    printf("최초 문자열 : %s\n", str1);
-    strcpy(str1, str2);
-    printf("바뀐 문자열 : %s\n", str1);
+    // printf("최초 문자열 : %s\n", str1);
+    // strcpy(str1, str2);
+    // printf("바뀐 문자열 : %s\n", str1);
 
-    strcpy(str1,ps1);
-    printf("바뀐 문자열 : %s\n", str1);
+    // strcpy(str1,ps1);
+    // printf("바뀐 문자열 : %s\n", str1);
 
-    strcpy(str1,ps2);
-    printf("바뀐 문자열 : %s\n", str1);
+    // strcpy(str1,ps2);
+    // printf("바뀐 문자열 : %s\n", str1);
 
-    strcpy(str1, "banana");
-    printf("바뀐 문자열 : %s\n", str1);
+    // strcpy(str1, "banana");
+    // printf("바뀐 문자열 : %s\n", str1);
 
+    // ex9)
+    char str[20] = "mango tree";
+    strncpy(str, "apple-pie", 5); // apple-pie에서 5문자만 복사
+    printf("%s\n", str);
 
     return 0;
 }
