@@ -105,16 +105,26 @@ int main() {
     // printf("%s\n", str);
 
     // ex11)
-    char str1[80], str2[80];
-    char *resp;
+    // char str1[80], str2[80];
+    // char *resp;
 
-    printf("2개의 과일 이름 입력 : ");
-    scanf("%s%s",str1,str2);
-    if(strlen(str1)> strlen(str2))
-        resp = str1;
-    else
-        resp = str2;
-    printf("이름이 긴 과일은 : %s\n", resp);
+    // printf("2개의 과일 이름 입력 : ");
+    // scanf("%s%s",str1,str2);
+    // if(strlen(str1)> strlen(str2))
+    //     resp = str1;
+    // else
+    //     resp = str2;
+    // printf("이름이 긴 과일은 : %s\n", resp);
+
+    // ex12)
+    char str1[80] = "pear";
+    char str2[80] = "peach";
+
+    printf("사전에 나중에 나오는 과일 이름 : ");
+    if(strcmp(str1, str2) > 0)
+        printf("%s\n", str1);
+    else 
+        printf("%s\n", str2);
 
     return 0;
 }
