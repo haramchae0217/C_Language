@@ -32,9 +32,9 @@ int  main() {
         // 배열의 현재 카운트 값을 참고하여 0이 아닌 알파벳에 대해서만 출현 회수를 출력
         if (alphaCnt[i] != 0) {
             if (i <= 25) {
-                printf("%c(%d번)",i+65,alphaCnt[i]);
+                printf("%c(%d번) ",i+65,alphaCnt[i]);
             } else {
-                printf("%c(%d번)",i+71,alphaCnt[i]);
+                printf("%c(%d번) ",i+71,alphaCnt[i]);
             }
         }
 
