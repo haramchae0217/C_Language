@@ -39,16 +39,24 @@ int main() {
   // printf("함수 호출 후의 a값 : %d\n", a);
 
   // 실습 -4
-  int i;
-  printf("일반 지역 변수를 사용한 함수...\n");
-  for(int i = 0; i < 3; i++) {
-    auto_func();
-  }
+  // int i;
+  // printf("일반 지역 변수를 사용한 함수...\n");
+  // for(int i = 0; i < 3; i++) {
+  //   auto_func();
+  // }
 
-  printf("정적 지역 변수(static)를 사용한 함수...\n");
-  for(int i = 0; i < 3; i++) {
-    static_func();
+  // printf("정적 지역 변수(static)를 사용한 함수...\n");
+  // for(int i = 0; i < 3; i++) {
+  //   static_func();
+  // }
+
+  // 실습 -5
+  register int i;
+  auto int sum = 0;
+  for (i = 1; i <= 10000; i++) {
+    sum += i;
   }
+  printf("%d\n",sum);
 
   return 0;
 }
