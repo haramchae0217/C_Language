@@ -69,4 +69,14 @@ void assign20(void) {
   a = 20;
 }
 
-void
+void auto_func(void) {
+  auto int a = 0;
+  a++;
+  printf("%d\n",a);
+}
+
+void static_func(void) {
+  static int a;
+  a++;
+  printf("%d\n",a);
+}
