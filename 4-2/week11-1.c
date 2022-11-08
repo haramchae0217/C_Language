@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int *sum(int a, int b);
-int *add(int n);
+int add(int n);
 
 int main() {
 
@@ -28,27 +28,25 @@ int main() {
   printf("Input N : ");
   scanf("%d", &N);
 
-  int *resp;
-  resp = add(N);
-
+  for(int i = 1; i <= N; i++) {
+    printf("%d ", add(i));
+  }
 
   return 0;
 }
 
-int *add(int n) {
+int add(int n) {
+  static int num;
+  
+  num += n;
+
+  return num;
+}
+
+int *sum(int a, int b) {
   static int res;
-  for(int i = 1; i <= n; i++) {
-    res += i;
-    printf("%d ", res);
-  }
+  // 주소를 리턴하기 때문에 res를 지역변수로 지정하면 매우 위험 따라서 static 지역변수로 지정해준다.
+  res = a + b;
 
   return &res;
 }
-
-// int *sum(int a, int b) {
-  // static int res;
-  // 주소를 리턴하기 때문에 res를 지역변수로 지정하면 매우 위험 따라서 static 지역변수로 지정해준다.
-  // res = a + b;
-
-  // return &res;
-// }
