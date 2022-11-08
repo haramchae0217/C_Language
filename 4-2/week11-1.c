@@ -55,19 +55,52 @@ int main() {
   // }
 
   // 실습 -5
-  int num[3][4] = {
-    {1, 2, 3, 4},
-    {5, 6, 7, 8},
-    {9, 10, 11, 12}
-  };
-  int i, j;
+  // int num[3][4] = {
+  //   {1, 2, 3, 4},
+  //   {5, 6, 7, 8},
+  //   {9, 10, 11, 12}
+  // };
+  // int i, j;
   
-  for(i = 0; i < 3; i++) {
-    for (j = 0; j < 4; j++) {
-      printf("%5d", num[i][j]);
+  // for(i = 0; i < 3; i++) {
+  //   for (j = 0; j < 4; j++) {
+  //     printf("%5d", num[i][j]);
+  //   }
+  //   printf("\n");
+  // }
+
+  // 실습 -6
+  // char animal[5][20];
+  // int i;
+  // int count;
+
+  // count = sizeof(animal) / sizeof(animal[0]); // 행의 수 계산
+  // for(i = 0; i < count; i++) { // 행의 수만큼 반복
+  //   scanf("%s", animal[0]);
+  // }
+
+  // for(i = 0; i < count; i++) {
+  //   printf("%s, ",animal[i]); // 입력된 문자열 출력
+  // }
+
+  // 실습 -7
+  int score[2][3][4] = {
+    {{72,80,95,60}, {68,98,83,90}, {75,72,84,90}},
+    {{66,85,90,88}, {95,92,88,95}, {43,72,56,75}}
+  };
+  int i,j,k;
+
+  for(i = 0; i < 2; i++) {
+    printf("%d반 점수...\n", i+1);
+    for(j = 0; j < 3; j++) {
+      for(k = 0; k < 4; k++) {
+        printf("%5d", score[i][j][k]);
+      }
+      printf("\n");
     }
     printf("\n");
   }
+
 
   return 0;
 }
