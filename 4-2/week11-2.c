@@ -49,34 +49,55 @@ int main() {
   // }
 
   // 실습 -2
-  // 2차원 문자 배열은 배열을 가리키는 포인터(배열포인터)로 핸들링할 수 있고,
-  // 문자 포인터 배열은 2차원 포인터로 핸들링할 수 있다.
+  // // 문자 포인터 배열은 2차원 포인터로 핸들링할 수 있고.
+  // // 2차원 문자 배열은 배열포인터로 핸들링할 수 있다.
 
-  // 만약 문자 포인터 배열을 보냈다면 2차원 포인터로 받아주고
-  // 2차원 문자 배열을 넘겼다면 배열 포인터로 받아준다.
+  // // 문자 포인터 배열을 보냈다면 2차원 포인터로 받아주고
+  // // 2차원 문자 배열을 넘겼다면 배열 포인터로 받아준다.
 
-  // 문자 포인터 배열 ex) char* pary[5] -> 2차원 포인터 ex) char** p = pary;
-  // 2차원 문자 배열 ex) char pary2[5][10] -> 배열 포인터 ex) char(*p)[10]
+  // // 문자 포인터 배열 ex) char* pary[5] -> 2차원 포인터 ex) char** p = pary;
+  // // 2차원 문자 배열 ex) char pary2[5][10] -> 배열 포인터 ex) char(*p)[10]
 
-  char* pary[5]; // -> 2차원 포인터로 핸들링 가능
-  // char pary2[5][10]; 2차원 문자 배열 -> 배열포인터로 핸들링 가능
-  int i;
+  // char* pary[5]; // -> 2차원 포인터로 핸들링 가능 
+  // // char pary2[5][10]; 2차원 문자 배열 -> 배열포인터로 핸들링 가능
+  // int i;
 
-  pary[0] = "dog";
-  pary[1] = "elephant";
-  pary[2] = "hores";
-  pary[3] = "tiger";
-  pary[4] = "lion";
+  // pary[0] = "dog";
+  // pary[1] = "elephant";
+  // pary[2] = "hores";
+  // pary[3] = "tiger";
+  // pary[4] = "lion";
 
-  for(i = 0; i < 5; i++) {
-    printf("%s\n", pary[i]);
-  }
+  // for(i = 0; i < 5; i++) {
+  //   printf("%s\n", pary[i]);
+  // }
 
-  char** p = pary; // char* (*p) = pary; 같은 의미
-  // 2차원 포인터가 가리킬 수 있는 대상은 포인터 배열, 주소가 저장된 배열,,
-  for(i = 0; i < 5; i++) {
-    printf("%s\n", p[i]);
-  }
+  // char** p = pary; // char* (*p) = pary; 같은 의미
+  // // 2차원 포인터가 가리킬 수 있는 대상은 포인터 배열, 주소가 저장된 배열,,
+  // for(i = 0; i < 5; i++) {
+  //   printf("%s\n", p[i]);
+  // }
+
+  // 실습 -3
+  // char* pArr[5];
+  // pArr[0] = ""
+  // pArr[1] = "elephant";
+  // pArr[2] = "horse";
+  // pArr[3] = "tiger";
+  // pArr[4] = lion;
+  // // char* pArr[5] = {"dog", "elephant", "horse", "tiger" , "lion"};
+
+  // // pArr[0][1] = 'A' // dog의 o가 A로 변경 불가능
+
+  // pArr[0] = pArr[1]; // 가능
+
+  
+  // char arr[][10] = {"dog", "elephant", "horse", "tiger", "lion"};
+  // arr[0][1] = 'A'; // dog의 o가 A로 변경 가능
+
+  // // arr[0] = arr[1]; // 불가능
+
+  
 
   return 0;
 }
