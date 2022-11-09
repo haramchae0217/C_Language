@@ -98,18 +98,26 @@ int main() {
   // // arr[0] = arr[1]; // 불가능
 
   // 실습 -4
-  int ary1[4] = {1,2,3,4};
-  int ary2[4] = {11,12,13,14};
-  int ary3[4] = {21,22,23,24};
-  int* pary[3] = {ary1, ary2, ary3};
-  int i, j;
+  // int ary1[4] = {1,2,3,4};
+  // int ary2[4] = {11,12,13,14};
+  // int ary3[4] = {21,22,23,24};
+  // int* pary[3] = {ary1, ary2, ary3};
+  // int i, j;
 
-  for(i = 0; i < 3; i++) {
-    for (j = 0; j < 4; j++) {
-      printf("%5d ", pary[i][j]);
-    }
-    printf("\n");
-  }
+  // for(i = 0; i < 3; i++) {
+  //   for (j = 0; j < 4; j++) {
+  //     printf("%5d ", pary[i][j]);
+  //   }
+  //   printf("\n");
+  // }
+
+  // 포인터 배열을 2차원 배열처럼 사용할 수 있는 이유
+  // pary[2][2]; = *(pary[2]+2);
+  // *(pary[2]+2) => *(300 + (2 * sizeof(int))) => *(308) => 23
+  // pary[0] = ary1 = 100
+  // pary[1] = ary2 = 200
+  // pary[2] = ary3 = 300
+  // ary3 = 300번지 21, 304번지 22, 308번지 23, 312번지 24
 
   return 0;
 }
