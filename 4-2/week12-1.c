@@ -46,7 +46,19 @@ int main() {
   // printf("가장 긴 이름과 길이 : %s, %d자(공백포함) \n", namesCpy[longestNameIdx], longestLen);
 
   // 실습 -2
-  
+  int a = 10;
+  int *pi; 
+  int **ppi;
+
+  pi = &a;
+  ppi = &pi;
+
+  printf("-------------------------------------------\n");
+  printf("변수    변숫값    &연산    *연산    **연산\n");
+  printf("-------------------------------------------\n");
+  printf("  a%10d%10u\n", a, &a);
+  printf(" pi%10u%10u%10d\n", pi, &pi, *pi);
+  printf("ppi%10u%10u%10u%10u\n", ppi, &ppi, *ppi, **ppi);
 
   return 0;
 }
