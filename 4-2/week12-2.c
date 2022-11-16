@@ -8,7 +8,10 @@
 void swap_ptr(char **ppa, char **ppb);
 void print_str(char **pps, int cnt);
 void print_ary(int (*)[4]);
-int sum(int, int);
+void func(int (*fp)(int, int));
+int sum(int a, int b);
+int mul(int a, int b);
+int max(int a, int b);
 
 int main() {
   
@@ -53,12 +56,28 @@ int main() {
   // print_ary(ary);
 
   // 실습 -6
-  int (*fp)(int, int);
-  int res;
+  // int (*fp)(int, int);
+  // int res;
 
-  fp = sum;
-  res = fp(10,20);
-  printf("result : %d\n",res);
+  // fp = sum;
+  // res = fp(10,20);
+  // printf("result : %d\n",res);
+
+  // 실습 -7
+  int sel;
+
+  printf("01 두 정수의 합\n");
+  printf("02 두 정수의 곱\n");
+  printf("03 두 정수 중에서 큰 값 계산\n");
+  printf("원하는 연산을 선택하세요 : ");
+  scanf("%d", &sel);
+
+  switch(sel) {
+    case 1: func(sum); break;
+    case 2: func(mul); break;
+    case 3: func(max); break;
+    default:  printf("올바르지 않은 선택입니다.");
+  }
 
   return 0;
 }
@@ -87,6 +106,28 @@ void print_ary(int (*pa)[4]) {
   }
 }
 
+void func(int (*fp)(int, int)) {
+  int a, b;
+  int res;
+
+  printf("두 정수의 값을 입력하세요 : ");
+  scanf("%d %d", &a, &b);
+  res = fp(a,b);
+  printf("결과값은 : %d\n",res);
+}
+
 int sum(int a, int b) {
   return (a + b);
+}
+
+int mul(int a, int b) {
+  return (a * b);
+}
+
+int max(int a, int b) {
+  if(a > b) {
+    return a;
+  } else {
+    return b;
+  }
 }
