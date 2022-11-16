@@ -13,7 +13,7 @@ int sum(int a, int b);
 int mul(int a, int b);
 int max(int a, int b);
 
-void opFunc(int (*fs)(double, double));
+double opFunc(double (*fs)(double, double));
 double Minus(double a, double b);
 double Divide(double a, double b); 
 
@@ -84,15 +84,23 @@ int main() {
   // }
 
   // 실습 -8
-  int a = 10;
-  double b = 3.5;
-  void *vp;
+  // int a = 10;
+  // double b = 3.5;
+  // void *vp;
 
-  vp = &a;
-  printf("a : %d\n", *(int *)vp);
+  // vp = &a;
+  // printf("a : %d\n", *(int *)vp);
 
-  vp = &b;
-  printf("b : %.1f\n", *(double *)vp);
+  // vp = &b;
+  // printf("b : %.1f\n", *(double *)vp);
+
+  // 실습 -9
+  int op;
+
+  printf("Operator? (Minus : 0, Divide : 1) : \n");
+  scanf("%d", &op);
+
+  (op) ? printf("Result : %f \n", opFunc(Divide) ) : printf("Result : %f \n", opFunc(Minus)); 
 
   return 0;
 }
@@ -144,5 +152,25 @@ int max(int a, int b) {
     return a;
   } else {
     return b;
+  }
+}
+
+double opFunc(double (*fs)(double, double)) {
+  printf("Input two nums : ");
+  double a, b;
+  
+  scanf("%lf %lf", &a, &b);
+  return fs(a, b);
+}
+
+double Minus(double a, double b) {
+  return (a - b);
+}
+
+double Divide(double a, double b) {
+  if ( b!= 0) {
+    return (a / b);
+  } else {
+    return 0;
   }
 }
