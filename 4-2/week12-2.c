@@ -4,6 +4,7 @@
 
 void swap_ptr(char **ppa, char **ppb);
 void print_str(char **pps, int cnt);
+void print_ary(int (*)[4]);
 
 int main() {
   
@@ -30,7 +31,18 @@ int main() {
   // printf(" ary + 1 : %u\t", ary + 1);
   // printf("  &ary + 1 : %u\n", &ary + 1);
 
-  
+  // 실습 -4
+  // int ary[3][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12} };
+  // int (*pa)[4];
+  // int i, j;
+
+  // pa = ary;
+  // for(i = 0; i < 3; i++) {
+  //   for(j = 0; j < 4; j++) {
+  //     printf("%5d", pa[i][j]);
+  //   }
+  //   printf("\n");
+  // }
 
   return 0;
 }
