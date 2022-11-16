@@ -2,9 +2,13 @@
 
 #include<stdio.h>
 
+#define PersonNum 3
+#define NameArrSize 30
+
 void swap_ptr(char **ppa, char **ppb);
 void print_str(char **pps, int cnt);
 void print_ary(int (*)[4]);
+int sum(int, int);
 
 int main() {
   
@@ -45,8 +49,16 @@ int main() {
   // }
 
   // 실습 -5
-  int ary[3][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12} };
-  print_ary(ary);
+  // int ary[3][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12} };
+  // print_ary(ary);
+
+  // 실습 -6
+  int (*fp)(int, int);
+  int res;
+
+  fp = sum;
+  res = fp(10,20);
+  printf("result : %d\n",res);
 
   return 0;
 }
@@ -73,4 +85,8 @@ void print_ary(int (*pa)[4]) {
     }
     printf("\n");
   }
+}
+
+int sum(int a, int b) {
+  return (a + b);
 }
