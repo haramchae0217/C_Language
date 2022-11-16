@@ -16,11 +16,21 @@ int main() {
   // printf("pa -> %s, pb -> %s\n", pa, pb);
 
   // 실습 -2
-  char *ptr_ary[] = {"eagle", "tiger", "lion", "squirrel"};
-  int count;
+  // char *ptr_ary[] = {"eagle", "tiger", "lion", "squirrel"};
+  // int count;
 
-  count = sizeof(ptr_ary) / sizeof(ptr_ary[0]);
-  print_str(ptr_ary, count);
+  // count = sizeof(ptr_ary) / sizeof(ptr_ary[0]);
+  // print_str(ptr_ary, count);
+
+  // 실습 -3
+  // int ary[5];
+
+  // printf("ary의 값 : %u\t", ary);
+  // printf("ary의 주소 : %u\n", &ary);
+  // printf(" ary + 1 : %u\t", ary + 1);
+  // printf("  &ary + 1 : %u\n", &ary + 1);
+
+  
 
   return 0;
 }
