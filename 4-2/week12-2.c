@@ -1,6 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 #define PersonNum 3
 #define NameArrSize 30
@@ -16,6 +18,45 @@ int max(int a, int b);
 double opFunc(double (*fs)(double, double));
 double Minus(double a, double b);
 double Divide(double a, double b); 
+
+void GetNames(char(*names)[NameArrSize], int personNum) {
+  printf("%d명의 이름을 입력 : \n", personNum);
+  for(int i = 0; i < personNum; i++) {
+    scanf(" %[^\n]s", names[i]);
+  }
+}
+
+void ChangeNames(char(*orgNameArr)[NameArrSize], char(*changedNameArr)[NameArrSize], int personNum) {
+  memcpy(changedNameArr, orgNameArr, personNum * NameArrSize);
+  for(int i = 0; i < PersonNum; i++) {
+    int nameLen = strlen(changedNameArr[i]);
+    for(int j = 0; j < nameLen; j++) {
+      if(isupper(changedNameArr[i][j])) {
+        changedNameArr[i][j] = tolower(changedNameArr[i][j]);
+      } else {
+        changedNameArr[i][j] = toupper(changedNameArr[i][j]);
+      }
+    }
+  }
+}
+
+void PrintNames(const char(*nameArr)[NameArrSize], int personNum) {
+  for(int i = 0; i < personNum; i++) {
+    printf("%s \n", nameArr[i]);
+  }
+}
+
+char* FindLongestName(char(*nameArr)[NameArrSize], int personNum) {
+  int longestLen = 0, longestNameIdx;
+  for(int i = 0; i < personNum; i++) {
+    int nameLen = strlen(nameArr[i]);
+    if(nameLen > longestLen) {
+      longestLen = nameLen;
+      longestNameIdx = i;
+    }
+  }
+  return nameArr[longestNameIdx];
+}
 
 int main() {
   
@@ -95,12 +136,28 @@ int main() {
   // printf("b : %.1f\n", *(double *)vp);
 
   // 실습 -9
-  int op;
+  // int op;
 
-  printf("Operator? (Minus : 0, Divide : 1) : \n");
-  scanf("%d", &op);
+  // printf("Operator? (Minus : 0, Divide : 1) : \n");
+  // scanf("%d", &op);
 
-  (op) ? printf("Result : %f \n", opFunc(Divide) ) : printf("Result : %f \n", opFunc(Minus)); 
+  // (op) ? printf("Result : %f \n", opFunc(Divide) ) : printf("Result : %f \n", opFunc(Minus)); 
+
+  // 실습 -10
+  char personNames[PersonNum][NameArrSize];
+  GetNames(personNames,PersonNum);
+  
+  char changeNameArr[PersonNum][NameArrSize];
+  ChangeNames(personNames, changeNameArr, PersonNum);
+
+  printf("\n%s \n", "입력된 이름들 : ");
+  PrintNames(personNames, PersonNum);
+
+  printf("\n%s \n", "수정된 이름들 : ");
+  PrintNames(changeNameArr, PersonNum);
+
+  char* longestName = FindLongestName(changeNameArr, PersonNum);
+  printf("\n가장 긴 이름과 길이 : \n%s, %lu자(공백 포함) \n", longestName, strlen(longestName));
 
   return 0;
 }
