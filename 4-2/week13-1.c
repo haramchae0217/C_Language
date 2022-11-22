@@ -45,27 +45,47 @@ int main() {
   // free(pi);
 
   // 실습 -3
-  int *pi;
-  int size = 5;
-  int count = 0;
-  int num;
+  // int *pi;
+  // int size = 5;
+  // int count = 0;
+  // int num;
+  // int i;
+
+  // pi = calloc(size, sizeof(int));
+  // while(1) {
+  //   printf("양수만 입력하세요 : ");
+  //   scanf("%d", &num);
+  //   if(num <= 0) break;
+  //   if(count == size) {
+  //     size += 5;
+  //     pi = realloc(pi, size * sizeof(int));
+  //   }
+  //   pi[count++] = num;
+  // }
+  // for(i = 0; i < count; i++) {
+  //   printf("%5d", pi[i]);
+  // }
+  // free(pi);
+
+  // 실습 -4
+  char temp[80];
+  char *str[3];
   int i;
 
-  pi = calloc(size, sizeof(int));
-  while(1) {
-    printf("양수만 입력하세요 : ");
-    scanf("%d", &num);
-    if(num <= 0) break;
-    if(count == size) {
-      size += 5;
-      pi = realloc(pi, size * sizeof(int));
-    }
-    pi[count++] = num;
+  for(i = 0; i < 3; i++) {
+    printf("문자열을 입력하세요 : ");
+    gets(temp);
+    str[i] = malloc(strlen(temp) + 1);
+    strcpy(str[i], temp);
   }
-  for(i = 0; i < count; i++) {
-    printf("%5d", pi[i]);
+
+  for(i = 0; i < 3; i++) {
+    printf("%s\n", str[i]);
   }
-  free(pi);
+
+  for(i = 0; i < 3; i++) {
+    free(str[i]);
+  }
 
   return 0;
 }
