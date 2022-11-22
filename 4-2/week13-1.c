@@ -6,7 +6,7 @@
 
 void print_str(char **ps);
 
-int main() {
+int main(int argc, char **argv) {
   // 실습 -1
   // int *pi;
   // double *pd;
@@ -109,6 +109,12 @@ int main() {
   // for(i = 0; str[i] != NULL; i++) {
   //   free(str[i]);
   // }
+
+  // 실습 -6
+  int i;
+  for(i = 0; i < argc; i++) {
+    printf("%s\n", argv[i]);
+  }
 
   return 0;
 }
