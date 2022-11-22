@@ -2,6 +2,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+void print_str(char **ps);
 
 int main() {
   // 실습 -1
@@ -68,24 +71,51 @@ int main() {
   // free(pi);
 
   // 실습 -4
-  char temp[80];
-  char *str[3];
-  int i;
+//   char temp[80];
+//   char *str[3];
+//   int i;
 
-  for(i = 0; i < 3; i++) {
-    printf("문자열을 입력하세요 : ");
-    gets(temp);
-    str[i] = malloc(strlen(temp) + 1);
-    strcpy(str[i], temp);
-  }
+//   for(i = 0; i < 3; i++) {
+//     printf("문자열을 입력하세요 : ");
+//     gets(temp);
+//     str[i] = malloc(strlen(temp) + 1);
+//     strcpy(str[i], temp);
+//   }
 
-  for(i = 0; i < 3; i++) {
-    printf("%s\n", str[i]);
-  }
+//   for(i = 0; i < 3; i++) {
+//     printf("%s\n", str[i]);
+//   }
 
-  for(i = 0; i < 3; i++) {
-    free(str[i]);
-  }
+//   for(i = 0; i < 3; i++) {
+//     free(str[i]);
+//   }
+
+  // 실습 -5
+  // char temp[80];
+  // char *str[4] = {0};
+  // int i = 0;
+
+  // while(i < 3) {
+  //   printf("문자열을 입력하세요 : ");
+  //   gets(temp);
+  //   if(strcmp(temp, "end") == 0) break;
+  //   str[i] = malloc(strlen(temp) + 1);
+  //   strcpy(str[i], temp);
+  //   i++;
+  // }
+
+  // print_str(str);
+
+  // for(i = 0; str[i] != NULL; i++) {
+  //   free(str[i]);
+  // }
 
   return 0;
+}
+
+void print_str(char **ps) {
+  while(*ps != NULL) {
+    printf("%s\n", *ps);
+    ps++;
+  }
 }
