@@ -25,34 +25,63 @@ int main() {
   // fclose(fp);
 
   // 실습 -2
-  FILE *fp;
-  char str[20];
+  // FILE *fp;
+  // char str[20];
 
-  fp = fopen("a.txt", "a+");
-  if(fp == NULL) {
-    printf("파일을 만들지 못했습니다.\n");
+  // fp = fopen("a.txt", "a+");
+  // if(fp == NULL) {
+  //   printf("파일을 만들지 못했습니다.\n");
+  //   return 1;
+  // }
+
+  // while(1) {
+  //   printf("과일 이름 : ");
+  //   scanf("%s", str);
+  //   if(strcmp(str, "end") == 0) {
+  //     break;
+  //   } else if(strcmp(str, "list") == 0) {
+  //     fseek(fp,0,SEEK_SET);
+  //     while(1) {
+  //       fgets(str, sizeof(str), fp);
+  //       if(feof(fp)) {
+  //         break;
+  //       }
+  //       printf("%s",str);
+  //     }
+  //   } else {
+  //     fprintf(fp,"%s\n", str);
+  //   }
+  // }
+  // fclose(fp);
+
+  // 실습 -3
+  FILE *ifp, *ofp;
+  char str[80];
+  char *res;
+
+  ifp = fopen("a.txt", "r");
+  if(ifp == NULL) {
+    printf("입력 파일을 열지 못했습니다.\n");
+    return 1;
+  }
+  ofp = fopen("b.txt", "w");
+  if(ofp == NULL) {
+    printf("출력 파일을 열지 못했습니다.\n");
     return 1;
   }
 
   while(1) {
-    printf("과일 이름 : ");
-    scanf("%s", str);
-    if(strcmp(str, "end") == 0) {
+    res = fgets(str, sizeof(str), ifp);
+    if(res == NULL) {
       break;
-    } else if(strcmp(str, "list") == 0) {
-      fseek(fp,0,SEEK_SET);
-      while(1) {
-        fgets(str, sizeof(str), fp);
-        if(feof(fp)) {
-          break;
-        }
-        printf("%s",str);
-      }
-    } else {
-      fprintf(fp,"%s\n", str);
     }
+    str[strlen(str) - 1] = '\0';
+    fputs(str, ofp);
+    fputs(" ", ofp);
   }
-  fclose(fp);
+
+  fclose(ifp);
+  fclose(ofp);
 
   return 0;
 }
