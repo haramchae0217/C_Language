@@ -55,33 +55,44 @@ int main() {
   // fclose(fp);
 
   // 실습 -3
-  FILE *ifp, *ofp;
-  char str[80];
-  char *res;
+  // FILE *ifp, *ofp;
+  // char str[80];
+  // char *res;
 
-  ifp = fopen("a.txt", "r");
-  if(ifp == NULL) {
-    printf("입력 파일을 열지 못했습니다.\n");
-    return 1;
-  }
-  ofp = fopen("b.txt", "w");
-  if(ofp == NULL) {
-    printf("출력 파일을 열지 못했습니다.\n");
-    return 1;
-  }
+  // ifp = fopen("a.txt", "r");
+  // if(ifp == NULL) {
+  //   printf("입력 파일을 열지 못했습니다.\n");
+  //   return 1;
+  // }
+  // ofp = fopen("b.txt", "w");
+  // if(ofp == NULL) {
+  //   printf("출력 파일을 열지 못했습니다.\n");
+  //   return 1;
+  // }
 
-  while(1) {
-    res = fgets(str, sizeof(str), ifp);
-    if(res == NULL) {
-      break;
-    }
-    str[strlen(str) - 1] = '\0';
-    fputs(str, ofp);
-    fputs(" ", ofp);
-  }
+  // while(1) {
+  //   res = fgets(str, sizeof(str), ifp);
+  //   if(res == NULL) {
+  //     break;
+  //   }
+  //   str[strlen(str) - 1] = '\0';
+  //   fputs(str, ofp);
+  //   fputs(" ", ofp);
+  // }
 
-  fclose(ifp);
-  fclose(ofp);
+  // fclose(ifp);
+  // fclose(ofp);
+
+  // 실습 -4
+  // int age;
+  // char name[20];
+
+  // FILE *fp = fopen("a.txt", "r");
+
+  // fscanf(fp, "%d", &age);
+  // fgets(name, sizeof(name), fp);
+
+  // printf("나이 : %d, 이름 : %s", age, name);
 
   return 0;
 }
