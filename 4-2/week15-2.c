@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:4101)
 
 #include <stdio.h>
 
@@ -12,14 +13,12 @@
 #define BIT16
 
 #pragma pack(push, 1)
-
 typedef struct {
   char ch;
   int in;
 } Sample1;
 
 #pragma pack(pop)
-
 typedef struct {
   char ch;
   int in;
@@ -59,6 +58,10 @@ int main() {
   // #endif
 
   //   printf("int형 변수의 최댓값 : %d\n", max);
+
+  // 실습 -4
+  printf("Sample1 구조체의 크기 : %dByte\n", sizeof(Sample1));
+  printf("Sample2 구조체의 크기 : %dByte\n", sizeof(Sample2));
 
   return 0;
 }
