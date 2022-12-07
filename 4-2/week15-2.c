@@ -2,7 +2,9 @@
 #pragma warning(disable:4101)
 
 #include <stdio.h>
-#include "week15-2sub.c"
+// #include "week15-2sub.c"
+#include "week15-2input.c"
+#include "week15-2average.c"
 
 #define SUM(a,b) ((a) + (b))
 #define MUL(a,b) ((a) * (b))
@@ -25,8 +27,8 @@ typedef struct {
   int in;
 } Sample2;
 
-void input_data(int *, int *);
-double average(int, int);
+// void input_data(int *, int *);
+// double average(int, int);
 
 int input_data(void);
 double average(void);
@@ -83,11 +85,13 @@ int main() {
   // printf("%d와 %d의 평균 : %.1f\n", a, b, avg);
 
   // 실습 -6
-  // double avg;
+  double avg;
 
-  // total = input_data();
-  // avg = average();
-  // print_data(avg);
+  total = input_data();
+  avg = average();
+  print_data(avg);
+
+  // 실습 -7
 
   return 0;
 }
