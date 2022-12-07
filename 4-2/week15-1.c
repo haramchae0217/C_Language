@@ -3,6 +3,17 @@
 #include <stdio.h>
 #include <string.h>
 
+struct Student {
+  char name[50];
+  double kor, math, eng;
+};
+
+struct Score {
+  char name[50];
+  double totalScore;
+  int subNum;
+};
+
 int main() {
 
   // 실습 -1
@@ -94,5 +105,25 @@ int main() {
 
   // printf("나이 : %d, 이름 : %s", age, name);
 
+  // 실습 -5
+  // FILE *afp, *bfp;
+  // int num = 10;
+  // int res;
+
+  // afp = fopen("a.txt", "wt");
+  // fprintf(afp, "%d", num);
+
+  // bfp = fopen("b.txt", "wb");
+  // fwrite(&num, sizeof(num), 1, bfp);
+
+  // fclose(afp);
+  // fclose(bfp);
+
+  // bfp = fopen("b.txt", "rb");
+  // fread(&res, sizeof(res), 1, bfp);
+  // printf("%d", res);
+
+  // fclose(bfp);
+  
   return 0;
 }
