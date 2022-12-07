@@ -28,6 +28,13 @@ typedef struct {
 void input_data(int *, int *);
 double average(int, int);
 
+int input_data(void);
+double average(void);
+void print_data(double);
+
+int count = 0;
+static int total = 0;
+
 int main() {
 
   // 실습 -1
@@ -68,12 +75,24 @@ int main() {
   // printf("Sample2 구조체의 크기 : %dByte\n", sizeof(Sample2));
 
   // 실습 -5
-  int a, b;
-  double avg;
+  // int a, b;
+  // double avg;
 
-  input_data(&a, &b);
-  avg = average(a,b);
-  printf("%d와 %d의 평균 : %.1f\n", a, b, avg);
+  // input_data(&a, &b);
+  // avg = average(a,b);
+  // printf("%d와 %d의 평균 : %.1f\n", a, b, avg);
+
+  // 실습 -6
+  // double avg;
+
+  // total = input_data();
+  // avg = average();
+  // print_data(avg);
 
   return 0;
+}
+
+void print_data(double avg) {
+  printf("입력한 양수의 개수 : %d\n", count);
+  printf("전체 합과 평균 : %d, %.1f\n", total, avg);
 }
