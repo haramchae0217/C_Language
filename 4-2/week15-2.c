@@ -3,39 +3,41 @@
 
 #include <stdio.h>
 // #include "week15-2sub.c"
-#include "week15-2input.c"
-#include "week15-2average.c"
+// #include "week15-2input.c"
+// #include "week15-2average.c"
+#include "week15-2point.h"
+#include "week15-2line.h"
 
-#define SUM(a,b) ((a) + (b))
-#define MUL(a,b) ((a) * (b))
+// #define SUM(a,b) ((a) + (b))
+// #define MUL(a,b) ((a) * (b))
 
-#define PRINT_EXPR(x) printf(#x " = %d\n", x)
-#define NAME_CAT(x, y) (x ## y)
+// #define PRINT_EXPR(x) printf(#x " = %d\n", x)
+// #define NAME_CAT(x, y) (x ## y)
 
-#define VER 7
-#define BIT16
+// #define VER 7
+// #define BIT16
 
-#pragma pack(push, 1)
-typedef struct {
-  char ch;
-  int in;
-} Sample1;
+// #pragma pack(push, 1)
+// typedef struct {
+//   char ch;
+//   int in;
+// } Sample1;
 
-#pragma pack(pop)
-typedef struct {
-  char ch;
-  int in;
-} Sample2;
+// #pragma pack(pop)
+// typedef struct {
+//   char ch;
+//   int in;
+// } Sample2;
 
 // void input_data(int *, int *);
 // double average(int, int);
 
-int input_data(void);
-double average(void);
-void print_data(double);
+// int input_data(void);
+// double average(void);
+// void print_data(double);
 
-int count = 0;
-static int total = 0;
+// int count = 0;
+// static int total = 0;
 
 int main() {
 
@@ -85,18 +87,25 @@ int main() {
   // printf("%d와 %d의 평균 : %.1f\n", a, b, avg);
 
   // 실습 -6
-  double avg;
+  // double avg;
 
-  total = input_data();
-  avg = average();
-  print_data(avg);
+  // total = input_data();
+  // avg = average();
+  // print_data(avg);
 
   // 실습 -7
+  Line a = { {1, 2}, {5, 6} };
+  Point b;
+
+  b.x = (a.first.x + a.second.x) / 2;
+  b.y = (a.first.y + a.second.y) / 2;
+
+  printf("선의 중심점의 좌표 : (%d, %d)\n", b.x, b.y);
 
   return 0;
 }
 
-void print_data(double avg) {
-  printf("입력한 양수의 개수 : %d\n", count);
-  printf("전체 합과 평균 : %d, %.1f\n", total, avg);
-}
+// void print_data(double avg) {
+//   printf("입력한 양수의 개수 : %d\n", count);
+//   printf("전체 합과 평균 : %d, %.1f\n", total, avg);
+// }
