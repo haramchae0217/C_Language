@@ -2,6 +2,7 @@
 #pragma warning(disable:4101)
 
 #include <stdio.h>
+#include "week15-2sub.c"
 
 #define SUM(a,b) ((a) + (b))
 #define MUL(a,b) ((a) * (b))
@@ -23,6 +24,9 @@ typedef struct {
   char ch;
   int in;
 } Sample2;
+
+void input_data(int *, int *);
+double average(int, int);
 
 int main() {
 
@@ -60,8 +64,16 @@ int main() {
   //   printf("int형 변수의 최댓값 : %d\n", max);
 
   // 실습 -4
-  printf("Sample1 구조체의 크기 : %dByte\n", sizeof(Sample1));
-  printf("Sample2 구조체의 크기 : %dByte\n", sizeof(Sample2));
+  // printf("Sample1 구조체의 크기 : %dByte\n", sizeof(Sample1));
+  // printf("Sample2 구조체의 크기 : %dByte\n", sizeof(Sample2));
+
+  // 실습 -5
+  int a, b;
+  double avg;
+
+  input_data(&a, &b);
+  avg = average(a,b);
+  printf("%d와 %d의 평균 : %.1f\n", a, b, avg);
 
   return 0;
 }
